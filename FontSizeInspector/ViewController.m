@@ -17,22 +17,47 @@
 - (void)viewDidLoad {
 	
 	[super viewDidLoad];
-	[self slided:self.slider];
+	
+	self.fontSizeLabel.text = [NSString stringWithFormat:@"%0.1f", self.fontSizeSlider.value];
+	self.kernLabel.text = [NSString stringWithFormat:@"%0.1f", self.kernSlider.value];
+	self.lineSpacingLabel.text = [NSString stringWithFormat:@"%0.1f", self.lineSpacingSlider.value];
+	
+	[self update];
 }
 
-- (void)slided:(UISlider *)slider {
+- (void)fontSizeSliderSlided:(UISlider *)slider {
 	
-	//	NSLog(@"slider %@", slider);
+	self.fontSizeLabel.text = [NSString stringWithFormat:@"%0.1f", self.fontSizeSlider.value];
 	
-	CGFloat value = slider.value;
-	UIFont *font = [UIFont systemFontOfSize:value];
-	//	UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:value];
-	//	UIFont *font = [UIFont fontWithName:@"FZLanTingHeiS-L-GB" size:value];
+	[self update];
+}
+
+- (void)kernSliderSlided:(UISlider *)slider {
 	
+	self.kernLabel.text = [NSString stringWithFormat:@"%0.1f", self.kernSlider.value];
 	
+	[self update];
+}
+
+- (void)lineSpacingSliderSlided:(UISlider *)slider {
 	
-	self.singleLineLabel.font = font;
-	self.doubleLinesLabel.font = font;
+	self.lineSpacingLabel.text = [NSString stringWithFormat:@"%0.1f", self.lineSpacingSlider.value];
+	
+	[self update];
+}
+
+#pragma mark - private
+
+- (void)update {
+	
+	UIFont *font = [UIFont systemFontOfSize:self.fontSizeSlider.value];
+//	UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:value];
+//	UIFont *font = [UIFont fontWithName:@"FZLanTingHeiS-L-GB" size:value];
+	
+	NSNumber *kern = [NSNumber numberWithFloat:self.kernSlider.value];
+	
+	NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+	paragraphStyle.lineSpacing = self.lineSpacingSlider.value;
 	
 	
 	
@@ -40,11 +65,10 @@
 	CGSize size = CGSizeZero;
 	CGSize constrainedSize = CGSizeMake(self.singleLineLabel.frame.size.width, CGFLOAT_MAX);
 	
-	NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-	
 	
 	
 	NSDictionary *attributes = @{NSFontAttributeName : font,
+								 NSKernAttributeName : kern,
 								 NSParagraphStyleAttributeName : paragraphStyle};
 	
 	NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:self.singleLineLabel.text];
@@ -59,7 +83,7 @@
 	rect.size.height = size.height;
 	self.singleLineLabel.frame = rect;
 	
-	self.fontHeightLabel.text = [NSString stringWithFormat:@"%0.1f", size.height];
+	self.fontHeightLabel.text = [NSString stringWithFormat:@"single line height: %0.1f", size.height];
 	
 	
 	
@@ -76,7 +100,6 @@
 	self.doubleLinesLabel.frame = rect;
 	
 	self.doubleLinesLabel.center = self.view.center;
-	self.fontSizeLabel.text = [NSString stringWithFormat:@"%0.1f", value];
 }
 
 @end
