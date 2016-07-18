@@ -29,6 +29,27 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="anr-BQ-EvS">
+                                <rect key="frame" x="20" y="344" width="35" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumValue="-1" maximumValue="1" stepValue="0.20000000000000001" id="f32-rK-RNg">
+                                <rect key="frame" x="113" y="345" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <action selector="fontWeightStepperChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="h3u-OI-pNh"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BKU-LK-0iB">
+                                <rect key="frame" x="265" y="344" width="35" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="K" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KPX-Bz-yda">
                                 <rect key="frame" x="20" y="383" width="35" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -37,14 +58,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="32" id="JcL-lh-exs">
-                                <rect key="frame" x="61" y="422" width="198" height="31"/>
+                                <rect key="frame" x="61" y="383" width="198" height="31"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="kernSliderSlided:" destination="BYZ-38-t0r" eventType="valueChanged" id="PyM-ph-8EW"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="00q-Ia-yTm">
-                                <rect key="frame" x="265" y="422" width="35" height="31"/>
+                                <rect key="frame" x="265" y="383" width="35" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,14 +79,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="32" id="nbx-9T-VNB">
-                                <rect key="frame" x="61" y="383" width="198" height="31"/>
+                                <rect key="frame" x="61" y="422" width="198" height="31"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="lineSpacingSliderSlided:" destination="BYZ-38-t0r" eventType="valueChanged" id="LO7-zD-Rq9"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TqJ-Xm-5zY">
-                                <rect key="frame" x="265" y="383" width="35" height="31"/>
+                                <rect key="frame" x="265" y="422" width="35" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -107,6 +128,8 @@
                         <outlet property="fontHeightLabel" destination="GoU-Q3-xXE" id="HFZ-iC-YIQ"/>
                         <outlet property="fontSizeLabel" destination="2pL-5t-q3e" id="YKe-tq-Tcm"/>
                         <outlet property="fontSizeSlider" destination="PGh-Se-MoR" id="cSI-vk-jDV"/>
+                        <outlet property="fontWeightLabel" destination="BKU-LK-0iB" id="gGw-wl-ddF"/>
+                        <outlet property="fontWeightStepper" destination="f32-rK-RNg" id="feP-PB-Ief"/>
                         <outlet property="kernLabel" destination="00q-Ia-yTm" id="Tzy-bm-26C"/>
                         <outlet property="kernSlider" destination="JcL-lh-exs" id="8dy-Ou-rJi"/>
                         <outlet property="lineSpacingLabel" destination="TqJ-Xm-5zY" id="bLd-5v-n8k"/>

@@ -18,9 +18,17 @@
 	
 	[super viewDidLoad];
 	
+	self.fontWeightLabel.text = [NSString stringWithFormat:@"%0.1f", self.fontWeightStepper.value];
 	self.fontSizeLabel.text = [NSString stringWithFormat:@"%0.1f", self.fontSizeSlider.value];
 	self.kernLabel.text = [NSString stringWithFormat:@"%0.1f", self.kernSlider.value];
 	self.lineSpacingLabel.text = [NSString stringWithFormat:@"%0.1f", self.lineSpacingSlider.value];
+	
+	[self update];
+}
+
+- (void)fontWeightStepperChanged:(UIStepper *)stepper {
+	
+	self.fontWeightLabel.text = [NSString stringWithFormat:@"%0.1f", self.fontWeightStepper.value];
 	
 	[self update];
 }
@@ -50,9 +58,12 @@
 
 - (void)update {
 	
-	UIFont *font = [UIFont systemFontOfSize:self.fontSizeSlider.value];
-//	UIFont *font = [UIFont fontWithName:@"HiraKakuProN-W3" size:value];
-//	UIFont *font = [UIFont fontWithName:@"FZLanTingHeiS-L-GB" size:value];
+	UIFont *font;
+	if (![UIFont respondsToSelector:@selector(systemFontOfSize:weight:)]) {
+		font = [UIFont systemFontOfSize:self.fontSizeSlider.value];
+	} else {
+		font = [UIFont systemFontOfSize:self.fontSizeSlider.value weight:self.fontWeightStepper.value];
+	}
 	
 	NSNumber *kern = [NSNumber numberWithFloat:self.kernSlider.value];
 	
@@ -62,7 +73,7 @@
 	
 	
 	CGRect rect = CGRectZero;
-	CGSize size = CGSizeZero;
+	CGRect boundingRect = CGRectZero;
 	CGSize constrainedSize = CGSizeMake(self.singleLineLabel.frame.size.width, CGFLOAT_MAX);
 	
 	
@@ -76,14 +87,16 @@
 	self.singleLineLabel.attributedText = attributedText;
 	
 	rect = self.singleLineLabel.frame;
-	size = [self.singleLineLabel.text boundingRectWithSize:constrainedSize
-												   options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-												attributes:attributes
-												   context:nil].size;
-	rect.size.height = size.height;
+	boundingRect = [self.singleLineLabel.text boundingRectWithSize:constrainedSize
+														   options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+														attributes:attributes
+														   context:nil];
+	boundingRect = CGRectIntegral(boundingRect);
+	
+	rect.size.height = boundingRect.size.height;
 	self.singleLineLabel.frame = rect;
 	
-	self.fontHeightLabel.text = [NSString stringWithFormat:@"single line height: %0.1f", size.height];
+	self.fontHeightLabel.text = [NSString stringWithFormat:@"single line height: %0.1f", boundingRect.size.height];
 	
 	
 	
@@ -92,11 +105,13 @@
 	self.doubleLinesLabel.attributedText = attributedText;
 	
 	rect = self.doubleLinesLabel.frame;
-	size = [self.doubleLinesLabel.text boundingRectWithSize:constrainedSize
-													options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-												 attributes:attributes
-													context:nil].size;
-	rect.size.height = size.height;
+	boundingRect = [self.doubleLinesLabel.text boundingRectWithSize:constrainedSize
+															options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+														 attributes:attributes
+															context:nil];
+	boundingRect = CGRectIntegral(boundingRect);
+	
+	rect.size.height = boundingRect.size.height;
 	self.doubleLinesLabel.frame = rect;
 	
 	self.doubleLinesLabel.center = self.view.center;
