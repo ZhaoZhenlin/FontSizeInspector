@@ -54,15 +54,55 @@
 	[self update];
 }
 
+- (void)fontItemTapped:(id)sender {
+	
+	FSIFontsTableViewController *viewController = [[FSIFontsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+	viewController.delegate = self;
+	
+	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+	
+	[self.navigationController presentViewController:navigationController
+											animated:YES
+										  completion:NULL];
+}
+
+- (void)textItemTapped:(id)sender {
+	
+	FSITextViewController *viewController = [[FSITextViewController alloc] initWithNibName:@"FSITextViewController" bundle:nil];
+	viewController.delegate = self;
+	
+	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+	
+	[self.navigationController presentViewController:navigationController
+											animated:YES
+										  completion:^{
+											  viewController.textView.text = self.singleLineLabel.text;
+										  }];
+}
+
 #pragma mark - private
 
 - (void)update {
 	
 	UIFont *font;
-	if (![UIFont respondsToSelector:@selector(systemFontOfSize:weight:)]) {
-		font = [UIFont systemFontOfSize:self.fontSizeSlider.value];
+	
+	if (self.fontName) {
+		
+		self.fontWeightContainer.hidden = YES;
+		font = [UIFont fontWithName:self.fontName size:self.fontSizeSlider.value];
+		
 	} else {
-		font = [UIFont systemFontOfSize:self.fontSizeSlider.value weight:self.fontWeightStepper.value];
+		
+		if (![UIFont respondsToSelector:@selector(systemFontOfSize:weight:)]) {
+			
+			self.fontWeightContainer.hidden = YES;
+			font = [UIFont systemFontOfSize:self.fontSizeSlider.value];
+			
+		} else {
+			
+			self.fontWeightContainer.hidden = NO;
+			font = [UIFont systemFontOfSize:self.fontSizeSlider.value weight:self.fontWeightStepper.value];
+		}
 	}
 	
 	NSNumber *kern = [NSNumber numberWithFloat:self.kernSlider.value];
@@ -115,6 +155,27 @@
 	self.doubleLinesLabel.frame = rect;
 	
 	self.doubleLinesLabel.center = self.view.center;
+}
+
+#pragma mark - FSITextViewControllerDelegate
+
+- (void)textViewControllerDidEndEditing:(FSITextViewController *)viewController {
+	
+	NSString *text = viewController.textView.text;
+	
+	self.singleLineLabel.text = text;
+	self.doubleLinesLabel.text = [NSString stringWithFormat:@"%@ %@ %@", text, text, text];
+	
+	[self update];
+}
+
+#pragma mark - FSIFontsTableViewControllerDelegate
+
+- (void)fontsTableViewController:(FSIFontsTableViewController *)viewController didSelectFontFamilyName:(NSString *)familyName {
+	
+	self.fontName = familyName;
+	
+	[self update];
 }
 
 @end

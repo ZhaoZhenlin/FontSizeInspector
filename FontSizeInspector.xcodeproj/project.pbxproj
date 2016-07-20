@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		793CA8851D3E6F1700D2B89B /* FSIFontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 793CA8841D3E6F1700D2B89B /* FSIFontsTableViewController.m */; };
+		793CA8881D3E6F3100D2B89B /* FSITextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 793CA8871D3E6F3100D2B89B /* FSITextViewController.m */; };
+		793CA88A1D3E6F9C00D2B89B /* FSITextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 793CA8891D3E6F9C00D2B89B /* FSITextViewController.xib */; };
 		79AB73FA1A09EC3C00DEEA68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AB73F91A09EC3C00DEEA68 /* main.m */; };
 		79AB73FD1A09EC3C00DEEA68 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AB73FC1A09EC3C00DEEA68 /* AppDelegate.m */; };
 		79AB74001A09EC3C00DEEA68 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AB73FF1A09EC3C00DEEA68 /* ViewController.m */; };
@@ -16,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		793CA8831D3E6F1700D2B89B /* FSIFontsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSIFontsTableViewController.h; sourceTree = "<group>"; };
+		793CA8841D3E6F1700D2B89B /* FSIFontsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSIFontsTableViewController.m; sourceTree = "<group>"; };
+		793CA8861D3E6F3100D2B89B /* FSITextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSITextViewController.h; sourceTree = "<group>"; };
+		793CA8871D3E6F3100D2B89B /* FSITextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSITextViewController.m; sourceTree = "<group>"; };
+		793CA8891D3E6F9C00D2B89B /* FSITextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSITextViewController.xib; sourceTree = "<group>"; };
 		79AB73F41A09EC3C00DEEA68 /* FontSizeInspector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontSizeInspector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79AB73F81A09EC3C00DEEA68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79AB73F91A09EC3C00DEEA68 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -62,6 +70,11 @@
 				79AB73FC1A09EC3C00DEEA68 /* AppDelegate.m */,
 				79AB73FE1A09EC3C00DEEA68 /* ViewController.h */,
 				79AB73FF1A09EC3C00DEEA68 /* ViewController.m */,
+				793CA8831D3E6F1700D2B89B /* FSIFontsTableViewController.h */,
+				793CA8841D3E6F1700D2B89B /* FSIFontsTableViewController.m */,
+				793CA8861D3E6F3100D2B89B /* FSITextViewController.h */,
+				793CA8871D3E6F3100D2B89B /* FSITextViewController.m */,
+				793CA8891D3E6F9C00D2B89B /* FSITextViewController.xib */,
 				79AB74011A09EC3C00DEEA68 /* Main.storyboard */,
 				79AB74041A09EC3C00DEEA68 /* Images.xcassets */,
 				79AB74061A09EC3C00DEEA68 /* LaunchScreen.xib */,
@@ -137,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				793CA88A1D3E6F9C00D2B89B /* FSITextViewController.xib in Resources */,
 				79AB74031A09EC3C00DEEA68 /* Main.storyboard in Resources */,
 				79AB74081A09EC3C00DEEA68 /* LaunchScreen.xib in Resources */,
 				79AB74051A09EC3C00DEEA68 /* Images.xcassets in Resources */,
@@ -152,7 +166,9 @@
 			files = (
 				79AB74001A09EC3C00DEEA68 /* ViewController.m in Sources */,
 				79AB73FD1A09EC3C00DEEA68 /* AppDelegate.m in Sources */,
+				793CA8881D3E6F3100D2B89B /* FSITextViewController.m in Sources */,
 				79AB73FA1A09EC3C00DEEA68 /* main.m in Sources */,
+				793CA8851D3E6F1700D2B89B /* FSIFontsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

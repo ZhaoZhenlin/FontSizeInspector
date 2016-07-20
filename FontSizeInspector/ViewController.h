@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+#import "FSITextViewController.h"
+#import "FSIFontsTableViewController.h"
+
+@interface ViewController : UIViewController <FSITextViewControllerDelegate, FSIFontsTableViewControllerDelegate>
+
+@property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) NSString *fontName;
 
 @property (nonatomic, weak) IBOutlet UILabel *singleLineLabel;
 @property (nonatomic, weak) IBOutlet UILabel *doubleLinesLabel;
@@ -25,9 +31,14 @@
 @property (nonatomic, weak) IBOutlet UISlider *kernSlider;
 @property (nonatomic, weak) IBOutlet UISlider *lineSpacingSlider;
 
+@property (nonatomic, weak) IBOutlet UIView *fontWeightContainer;
+
 - (IBAction)fontWeightStepperChanged:(UIStepper *)stepper;
 - (IBAction)fontSizeSliderSlided:(UISlider *)slider;
 - (IBAction)kernSliderSlided:(UISlider *)slider;
 - (IBAction)lineSpacingSliderSlided:(UISlider *)slider;
+
+- (IBAction)fontItemTapped:(id)sender;
+- (IBAction)textItemTapped:(id)sender;
 
 @end
