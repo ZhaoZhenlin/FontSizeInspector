@@ -1,0 +1,5 @@
+os: osx
+language: objective-c
+osx_image: xcode9.1
+xcode_project: FontSizeInspector.xcodeproj
+xcode_scheme: FontSizeInspector
