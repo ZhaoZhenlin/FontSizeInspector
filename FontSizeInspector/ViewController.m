@@ -112,11 +112,7 @@
 	
 	
 	
-	CGRect rect = CGRectZero;
 	CGRect boundingRect = CGRectZero;
-	CGSize constrainedSize = CGSizeMake(self.singleLineLabel.frame.size.width, CGFLOAT_MAX);
-	
-	
 	
 	NSDictionary *attributes = @{NSFontAttributeName : font,
 								 NSKernAttributeName : kern,
@@ -126,15 +122,11 @@
 	[attributedText setAttributes:attributes range:NSMakeRange(0, attributedText.length)];
 	self.singleLineLabel.attributedText = attributedText;
 	
-	rect = self.singleLineLabel.frame;
-	boundingRect = [self.singleLineLabel.text boundingRectWithSize:constrainedSize
+	boundingRect = [self.singleLineLabel.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)
 														   options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
 														attributes:attributes
 														   context:nil];
 	boundingRect = CGRectIntegral(boundingRect);
-	
-	rect.size.height = boundingRect.size.height;
-	self.singleLineLabel.frame = rect;
 	
 	self.fontHeightLabel.text = [NSString stringWithFormat:@"single line height: %0.1f", boundingRect.size.height];
 	
@@ -143,18 +135,6 @@
 	attributedText = [[NSMutableAttributedString alloc] initWithString:self.doubleLinesLabel.text];
 	[attributedText setAttributes:attributes range:NSMakeRange(0, attributedText.length)];
 	self.doubleLinesLabel.attributedText = attributedText;
-	
-	rect = self.doubleLinesLabel.frame;
-	boundingRect = [self.doubleLinesLabel.text boundingRectWithSize:constrainedSize
-															options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-														 attributes:attributes
-															context:nil];
-	boundingRect = CGRectIntegral(boundingRect);
-	
-	rect.size.height = boundingRect.size.height;
-	self.doubleLinesLabel.frame = rect;
-	
-	self.doubleLinesLabel.center = self.view.center;
 }
 
 #pragma mark - FSITextViewControllerDelegate
