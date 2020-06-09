@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	self.title = @"Text";
+	
 	UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Done"
 															 style:UIBarButtonItemStylePlain
 															target:self

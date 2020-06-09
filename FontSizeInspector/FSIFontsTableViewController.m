@@ -20,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	self.title = @"Fonts";
+	
 	UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:@"Done"
 																 style:UIBarButtonItemStylePlain
 																target:self

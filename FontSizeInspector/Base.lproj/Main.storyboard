@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u7A-5u-k10">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u7A-5u-k10">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,24 +12,24 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绘文字 えもじ Emoji 😱" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoM-py-zPt">
-                                <rect key="frame" x="20" y="64" width="335" height="21"/>
-                                <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="16" y="108" width="343" height="21"/>
+                                <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绘文字 えもじ Emoji 😱 绘文字 えもじ Emoji 😱 绘文字 えもじ Emoji 😱" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Is8-Jz-3a4">
-                                <rect key="frame" x="20" y="335" width="335" height="41"/>
-                                <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="16" y="412.66666666666669" width="343" height="40.666666666666686"/>
+                                <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddF-Ln-DtL">
-                                <rect key="frame" x="20" y="443" width="335" height="31"/>
+                                <rect key="frame" x="20" y="554" width="335" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anr-BQ-EvS">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="31"/>
@@ -41,19 +41,23 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumValue="-1" maximumValue="1" stepValue="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="f32-rK-RNg">
-                                        <rect key="frame" x="120.5" y="-0.5" width="94" height="32"/>
+                                        <rect key="frame" x="120.66666666666666" y="-0.33333333333337123" width="94" height="32"/>
                                         <connections>
                                             <action selector="fontWeightStepperChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="h3u-OI-pNh"/>
                                         </connections>
                                     </stepper>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKU-LK-0iB">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKU-LK-0iB">
                                         <rect key="frame" x="300" y="0.0" width="35" height="31"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="OFk-ER-fkj"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="Ve8-RU-cZF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="9hD-Uj-7Xx" appends="YES" id="dSR-Nc-ASW"/>
+                                        </connections>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -70,7 +74,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="K" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPX-Bz-yda">
-                                <rect key="frame" x="20" y="482" width="35" height="31"/>
+                                <rect key="frame" x="20" y="593" width="35" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Byu-lH-3hQ"/>
                                     <constraint firstAttribute="width" constant="35" id="itg-lB-2wp"/>
@@ -79,13 +83,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="32" translatesAutoresizingMaskIntoConstraints="NO" id="JcL-lh-exs">
-                                <rect key="frame" x="61" y="482" width="253" height="31"/>
+                                <rect key="frame" x="61" y="593" width="253" height="31"/>
                                 <connections>
                                     <action selector="kernSliderSlided:" destination="BYZ-38-t0r" eventType="valueChanged" id="PyM-ph-8EW"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00q-Ia-yTm">
-                                <rect key="frame" x="320" y="482" width="35" height="31"/>
+                                <rect key="frame" x="320" y="593" width="35" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="4L7-xY-Icf"/>
                                     <constraint firstAttribute="height" constant="31" id="Ycb-na-muQ"/>
@@ -94,7 +98,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7F-nv-gbz">
-                                <rect key="frame" x="20" y="521" width="35" height="31"/>
+                                <rect key="frame" x="20" y="632" width="35" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="h9R-KB-EV0"/>
                                     <constraint firstAttribute="width" constant="35" id="l0v-Yo-U8A"/>
@@ -103,13 +107,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="32" translatesAutoresizingMaskIntoConstraints="NO" id="nbx-9T-VNB">
-                                <rect key="frame" x="61" y="521" width="253" height="31"/>
+                                <rect key="frame" x="61" y="632" width="253" height="31"/>
                                 <connections>
                                     <action selector="lineSpacingSliderSlided:" destination="BYZ-38-t0r" eventType="valueChanged" id="LO7-zD-Rq9"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqJ-Xm-5zY">
-                                <rect key="frame" x="320" y="521" width="35" height="31"/>
+                                <rect key="frame" x="320" y="632" width="35" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Fkt-yS-iJy"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="tDs-Tw-hio"/>
@@ -118,7 +122,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fs2-FU-jQL">
-                                <rect key="frame" x="20" y="560" width="35" height="31"/>
+                                <rect key="frame" x="20" y="671" width="35" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="m07-YH-E3k"/>
                                     <constraint firstAttribute="width" constant="35" id="wMd-Jk-BHV"/>
@@ -126,23 +130,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="8" maxValue="32" translatesAutoresizingMaskIntoConstraints="NO" id="PGh-Se-MoR">
-                                <rect key="frame" x="61" y="561" width="253" height="31"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="8" maxValue="64" translatesAutoresizingMaskIntoConstraints="NO" id="PGh-Se-MoR">
+                                <rect key="frame" x="61" y="672" width="253" height="31"/>
                                 <connections>
                                     <action selector="fontSizeSliderSlided:" destination="BYZ-38-t0r" eventType="valueChanged" id="XEG-Me-dG8"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pL-5t-q3e">
-                                <rect key="frame" x="320" y="560" width="35" height="31"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pL-5t-q3e">
+                                <rect key="frame" x="320" y="671" width="35" height="31"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="0PR-II-zeD"/>
                                     <constraint firstAttribute="height" constant="31" id="vh6-5f-vxW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="9XJ-7c-fFQ" appends="YES" id="qHJ-qD-CaG"/>
+                                </connections>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoU-Q3-xXE">
-                                <rect key="frame" x="20" y="616" width="335" height="31"/>
+                                <rect key="frame" x="20" y="727" width="335" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="spO-wM-hcF"/>
                                 </constraints>
@@ -163,8 +171,8 @@
                             <constraint firstItem="ddF-Ln-DtL" firstAttribute="leading" secondItem="ZMa-hL-slR" secondAttribute="leading" constant="20" id="GKH-qu-46c"/>
                             <constraint firstItem="X7F-nv-gbz" firstAttribute="top" secondItem="KPX-Bz-yda" secondAttribute="bottom" constant="8" id="GxL-do-m01"/>
                             <constraint firstItem="TqJ-Xm-5zY" firstAttribute="top" secondItem="00q-Ia-yTm" secondAttribute="bottom" constant="8" id="Hdq-Tn-Prd"/>
-                            <constraint firstItem="ZMa-hL-slR" firstAttribute="trailing" secondItem="Is8-Jz-3a4" secondAttribute="trailing" constant="20" id="Ils-Ww-4JX"/>
-                            <constraint firstItem="OoM-py-zPt" firstAttribute="leading" secondItem="ZMa-hL-slR" secondAttribute="leading" constant="20" id="P6e-X6-pbR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Is8-Jz-3a4" secondAttribute="trailing" id="Ils-Ww-4JX"/>
+                            <constraint firstItem="OoM-py-zPt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="P6e-X6-pbR"/>
                             <constraint firstItem="Fs2-FU-jQL" firstAttribute="top" secondItem="X7F-nv-gbz" secondAttribute="bottom" constant="8" id="QCa-49-x3c"/>
                             <constraint firstItem="JcL-lh-exs" firstAttribute="leading" secondItem="KPX-Bz-yda" secondAttribute="trailing" constant="8" id="T6o-it-JAp"/>
                             <constraint firstItem="ZMa-hL-slR" firstAttribute="trailing" secondItem="TqJ-Xm-5zY" secondAttribute="trailing" constant="20" id="TmV-U8-ECj"/>
@@ -177,10 +185,10 @@
                             <constraint firstItem="2pL-5t-q3e" firstAttribute="leading" secondItem="PGh-Se-MoR" secondAttribute="trailing" constant="8" id="bHv-OB-uxd"/>
                             <constraint firstItem="ZMa-hL-slR" firstAttribute="trailing" secondItem="2pL-5t-q3e" secondAttribute="trailing" constant="20" id="dlr-ac-Hf9"/>
                             <constraint firstItem="ZMa-hL-slR" firstAttribute="bottom" secondItem="GoU-Q3-xXE" secondAttribute="bottom" constant="20" id="fPI-O6-6lU"/>
-                            <constraint firstItem="ZMa-hL-slR" firstAttribute="trailing" secondItem="OoM-py-zPt" secondAttribute="trailing" constant="20" id="k9r-3i-GVm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OoM-py-zPt" secondAttribute="trailing" id="k9r-3i-GVm"/>
                             <constraint firstItem="TqJ-Xm-5zY" firstAttribute="leading" secondItem="nbx-9T-VNB" secondAttribute="trailing" constant="8" id="nrh-hh-IGd"/>
                             <constraint firstItem="GoU-Q3-xXE" firstAttribute="top" secondItem="Fs2-FU-jQL" secondAttribute="bottom" constant="25" id="pph-fr-Iy8"/>
-                            <constraint firstItem="Is8-Jz-3a4" firstAttribute="leading" secondItem="ZMa-hL-slR" secondAttribute="leading" constant="20" id="rXE-Am-YSk"/>
+                            <constraint firstItem="Is8-Jz-3a4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rXE-Am-YSk"/>
                             <constraint firstItem="nbx-9T-VNB" firstAttribute="top" secondItem="JcL-lh-exs" secondAttribute="bottom" constant="9" id="sZB-ZH-AU1"/>
                             <constraint firstItem="OoM-py-zPt" firstAttribute="top" secondItem="ZMa-hL-slR" secondAttribute="top" constant="20" id="sZP-aL-ArA"/>
                             <constraint firstItem="Is8-Jz-3a4" firstAttribute="centerY" secondItem="ZMa-hL-slR" secondAttribute="centerY" id="wHs-gR-hON"/>
@@ -198,6 +206,11 @@
                             <barButtonItem title="Text" id="qJc-Mk-HRf">
                                 <connections>
                                     <action selector="textItemTapped:" destination="BYZ-38-t0r" id="OFt-Bw-oPt"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Style" id="L8u-dt-dmo">
+                                <connections>
+                                    <action selector="styleItemTapped:" destination="BYZ-38-t0r" id="8u2-2t-A7A"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -218,6 +231,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9hD-Uj-7Xx">
+                    <connections>
+                        <action selector="fontWeightLabelTapped:" destination="BYZ-38-t0r" id="EhI-IW-k86"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="9XJ-7c-fFQ">
+                    <connections>
+                        <action selector="fontSizeLabelTapped:" destination="BYZ-38-t0r" id="OcX-hv-qaR"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="375.19999999999999" y="220.83958020989508"/>
         </scene>
@@ -226,7 +249,7 @@
             <objects>
                 <navigationController id="u7A-5u-k10" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AAg-YJ-ajH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

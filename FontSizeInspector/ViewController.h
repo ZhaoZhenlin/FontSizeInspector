@@ -10,6 +10,7 @@
 
 #import "FSITextViewController.h"
 #import "FSIFontsTableViewController.h"
+#import "FSIStylesTableViewController.h"
 
 @interface ViewController : UIViewController <FSITextViewControllerDelegate, FSIFontsTableViewControllerDelegate>
 
@@ -40,5 +41,9 @@
 
 - (IBAction)fontItemTapped:(id)sender;
 - (IBAction)textItemTapped:(id)sender;
+- (IBAction)styleItemTapped:(id)sender;
+
+- (IBAction)fontWeightLabelTapped:(UITapGestureRecognizer *)tapper;
+- (IBAction)fontSizeLabelTapped:(UITapGestureRecognizer *)tapper;
 
 @end
