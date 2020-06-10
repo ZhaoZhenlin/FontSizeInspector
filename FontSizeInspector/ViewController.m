@@ -24,7 +24,10 @@
 	self.fontSizeLabel.text = [NSString stringWithFormat:@"%0.1f", self.fontSizeSlider.value];
 	self.kernLabel.text = [NSString stringWithFormat:@"%0.1f", self.kernSlider.value];
 	self.lineSpacingLabel.text = [NSString stringWithFormat:@"%0.1f", self.lineSpacingSlider.value];
-	
+}
+
+- (void)viewDidLayoutSubviews {
+	[super viewDidLayoutSubviews];
 	[self update];
 }
 
@@ -100,8 +103,6 @@
 }
 
 - (void)fontWeightLabelTapped:(UITapGestureRecognizer *)tapper {
-	
-//	2020-06-09 17:19:34.538188+0800 FontSizeInspector[23683:3232238] *** Terminating app due to uncaught exception 'NSGenericException', reason: 'Your application has presented a UIAlertController (<UIAlertController: 0x7f91d8008200>) of style UIAlertControllerStyleActionSheet from UINavigationController (<UINavigationController: 0x7f91d7808200>). The modalPresentationStyle of a UIAlertController with this style is UIModalPresentationPopover. You must provide location information for this popover through the alert controller's popoverPresentationController. You must provide either a sourceView and sourceRect or a barButtonItem.  If this information is not known when you present the alert controller, you may provide it in the UIPopoverPresentationControllerDelegate method -prepareForPopoverPresentation.'
 	
 	UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Choose a Font Weight"
 																   message:nil
@@ -243,8 +244,6 @@
 	
 	
 	
-	CGRect boundingRect = CGRectZero;
-	
 	NSDictionary *attributes = @{NSFontAttributeName : font,
 								 NSKernAttributeName : kern,
 								 NSParagraphStyleAttributeName : paragraphStyle};
@@ -253,19 +252,25 @@
 	[attributedText setAttributes:attributes range:NSMakeRange(0, attributedText.length)];
 	self.singleLineLabel.attributedText = attributedText;
 	
-	boundingRect = [self.singleLineLabel.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)
-														   options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-														attributes:attributes
-														   context:nil];
-	boundingRect = CGRectIntegral(boundingRect);
-	
-	self.fontHeightLabel.text = [NSString stringWithFormat:@"single line height: %0.1f", boundingRect.size.height];
+//	CGRect boundingRect = CGRectZero;
+//
+//	boundingRect = [self.singleLineLabel.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)
+//														   options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+//														attributes:attributes
+//														   context:nil];
+//	boundingRect = CGRectIntegral(boundingRect);
+//
+//	self.fontHeightLabel.text = [NSString stringWithFormat:@"single line height: %0.1f", boundingRect.size.height];
 	
 	
 	
 	attributedText = [[NSMutableAttributedString alloc] initWithString:self.doubleLinesLabel.text];
 	[attributedText setAttributes:attributes range:NSMakeRange(0, attributedText.length)];
 	self.doubleLinesLabel.attributedText = attributedText;
+	
+	
+	
+	self.fontHeightLabel.text = [NSString stringWithFormat:@"single: %0.1f, multiple: %0.1f", ceilf(font.lineHeight), ceilf(self.doubleLinesLabel.frame.size.height)];
 }
 
 #pragma mark - FSITextViewControllerDelegate
